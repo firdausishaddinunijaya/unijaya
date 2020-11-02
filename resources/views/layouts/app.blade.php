@@ -289,6 +289,62 @@
                                 $(baseAjaxModalContent).modal("hide");
                                 datatable.DataTable().ajax.reload()
                             });
+                        } else if (response.code == '422') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Validation Error.",
+                                text: response.data[0].field + " " + response.data[0].message,
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '404') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Resource Not Found.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '405') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Method Not Allowed.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '401') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Unauthenticated.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '400') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Bad Request.",
+                                text: "Malformed JSON String.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '403') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "User Has No Permission.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '429') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Too Many Requests.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '415') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Unsupported Media Type.",
+                                showConfirmButton: true,
+                            })
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Internal Server Error',
+                                showConfirmButton: true,
+                            })
                         }
                     },
                     fail: (response) => {
@@ -322,6 +378,56 @@
                                 $(baseAjaxModalContent).modal("hide");
                                 datatable.DataTable().ajax.reload()
                             });
+                        } else if (response.code == '422') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Validation Error.",
+                                text: response.data[0].field + " " + response.data[0].message,
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '404') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Resource Not Found.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '405') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Method Not Allowed.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '401') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Unauthenticated.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '400') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Bad Request.",
+                                text: "Malformed JSON String.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '403') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "User Has No Permission.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '429') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Too Many Requests.",
+                                showConfirmButton: true,
+                            })
+                        } else if (response.code == '415') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Unsupported Media Type.",
+                                showConfirmButton: true,
+                            })
                         } else {
                             Swal.fire({
                                 icon: 'error',
