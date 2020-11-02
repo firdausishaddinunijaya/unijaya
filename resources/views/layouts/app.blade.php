@@ -119,6 +119,10 @@
         .dataTables_wrapper .dataTables_paginate .paginate_button {
             padding: 0em 0em;
         }
+
+        #name {
+            text-transform: capitalize;
+        }
     </style>
 
     <!-- BEGIN: Content-->
@@ -293,7 +297,7 @@
                             Swal.fire({
                                 icon: 'error',
                                 title: "Validation Error.",
-                                text: response.data[0].field + " " + response.data[0].message,
+                                text: response.data[0].field.charAt(0).toUpperCase() + response.data[0].field.slice(1) + " " + response.data[0].message,
                                 showConfirmButton: true,
                             })
                         } else if (response.code == '404') {
@@ -382,7 +386,7 @@
                             Swal.fire({
                                 icon: 'error',
                                 title: "Validation Error.",
-                                text: response.data[0].field + " " + response.data[0].message,
+                                text: response.data[0].field.charAt(0).toUpperCase() + response.data[0].field.slice(1) + " " + response.data[0].message,
                                 showConfirmButton: true,
                             })
                         } else if (response.code == '404') {
